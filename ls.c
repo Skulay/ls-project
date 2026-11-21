@@ -3,7 +3,7 @@
 void    files_init(t_files *v)
 {
 	if (!v)
-		return (NULL);
+		return ;
 	v->data = NULL;
 	v->len = 0;
 	v->cap = 0;
