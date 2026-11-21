@@ -2,7 +2,7 @@
 #define LS_H
 
 #include <sys/types.h>
-#include <sys/stats.h>
+#include <sys/stat.h>
 #include <sys/sysmacros.h>
 #include <dirent.h>
 #include <pwd.h> // getpwuid
@@ -10,6 +10,7 @@
 #include <time.h>
 #include <errno.h>
 #include <string.h>
+#include "libft/libft.h"
 
 typedef struct s_opts
 {
