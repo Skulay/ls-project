@@ -32,5 +32,20 @@ int     files_push(t_files *v, t_file f)
 	return (0);
 }
 
-void    files_free(t_files *v);                   // libère name/path de chaque case, puis data
+void    files_free(t_files *v)
+{
+	if (!v)
+		return ;
+	for (size_t i = 0; i < v->len; i++)
+	{
+		free(v->data[i].name);
+		free(v->data[i].path);
+	}
+	if (v->data)
+		free(v->data);
+	v->data = NULL;
+	v->len = 0;
+	v->cap = 0;
+}
+
 void    files_sort(t_files *v, t_opts *opts);     // qsort avec le bon comparateur
